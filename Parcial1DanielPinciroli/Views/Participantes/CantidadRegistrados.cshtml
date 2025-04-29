@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Parcial1DanielPinciroli.CantidadRegistrados>
+
+@{
+    ViewData["Title"] = "CantidadRegistrados";
+}
+
+<h1>Cantidad de Participantes Registrados</h1>
+
+@* <p>
+    <a asp-action="Create">""</a>
+</p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDRegistrados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDisciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDRegistrados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDisciplina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+             @*    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

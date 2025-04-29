@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Parcial1DanielPinciroli.Participantes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de Participantes</h1>
+
+<p>
+    <a asp-action="Create">Registrar Participante</a>
+</p>
+@if (Model.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDParticipante)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDDisciplina)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CiudadResidencia)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDParticipante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDDisciplina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CiudadResidencia)
+                </td>
+                <td>
+                   @*  @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+    <p>Hay @Model.Count() participantes cargados correctamente</p>
+}
+else
+{
+    <div class="alert alert-info">No hay información sobre Participantes Registrados</div>
+}
